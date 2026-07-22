@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Modern Minimal Agency: blanco puro, tinta neutra, gris zinc. */
+    --background: 255 255 255;
+    --foreground: 9 9 11; /* zinc-950 */
+    --muted: 113 113 122; /* zinc-500 */
+    --card: 255 255 255;
+    --border: 228 228 231; /* zinc-200 */
+    --ring: 124 58 237;
+  }
+
+  .dark {
+    --background: 9 9 11; /* zinc-950 */
+    --foreground: 250 250 250;
+    --muted: 161 161 170; /* zinc-400 */
+    --card: 24 24 27; /* zinc-900 */
+    --border: 39 39 42; /* zinc-800 */
+    --ring: 157 115 255;
+  }
+
+  * {
+    border-color: rgb(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Modern Minimal Agency: una sola familia limpia, tracking ceñido. */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-jakarta), system-ui, sans-serif;
+    letter-spacing: -0.025em;
+  }
+
+  /* Foco visible y accesible en todos los elementos interactivos. */
+  :focus-visible {
+    outline: 2px solid rgb(var(--ring));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Ajuste de scroll para el header sticky al saltar a anclas. */
+  section[id],
+  div[id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .text-gradient {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+
+  .surface-card {
+    background-color: rgb(var(--card));
+    @apply rounded-2xl border shadow-soft;
+  }
+
+  /* Enlace para saltar al contenido (accesibilidad). */
+  .skip-link {
+    @apply sr-only;
+  }
+  .skip-link:focus {
+    @apply not-sr-only fixed left-4 top-4 z-[100] rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-glow;
+  }
+}
+
+@layer utilities {
+  .text-muted {
+    color: rgb(var(--muted));
+  }
+  /* Malla de puntos sutil para fondos. */
+  .bg-dots {
+    background-image: radial-gradient(
+      rgb(var(--border)) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /* Grano sutil para dar textura premium (evita el look "plano de IA"). */
+  .bg-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Marquesina horizontal continua. */
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .text-shadow-soft {
+    text-shadow: 0 1px 2px rgba(16, 12, 40, 0.08);
+  }
+}
