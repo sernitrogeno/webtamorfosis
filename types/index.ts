@@ -38,7 +38,7 @@ export interface Benefit {
   description: string;
 }
 
-export type CaseSector = "restauracion" | "salud" | "servicios" | "comercio";
+export type CaseSector = "restauracion" | "salud" | "servicios" | "deporte";
 
 export interface CaseStudy {
   slug: string;

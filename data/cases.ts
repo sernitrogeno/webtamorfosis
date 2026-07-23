@@ -1,4 +1,4 @@
-import { UtensilsCrossed, Stethoscope, HardHat } from "lucide-react";
+import { UtensilsCrossed, Stethoscope, HardHat, Dumbbell } from "lucide-react";
 import type { CaseStudy } from "@/types";
 
 /**
@@ -84,6 +84,31 @@ export const cases: CaseStudy[] = [
       "Explicar cada servicio con lenguaje claro, sin tecnicismos.",
       "Facilitar la petición de presupuesto desde cualquier página.",
       "Reforzar la solidez de la marca con un diseño robusto.",
+    ],
+  },
+  {
+    slug: "gimnasio",
+    name: "Gimnasio",
+    sectorLabel: "Deporte",
+    sector: "deporte",
+    icon: Dumbbell,
+    before: [
+      "Colores estridentes y difíciles de leer",
+      "Tarifas poco claras o escondidas",
+      "Sin forma de apuntarse online",
+      "Horarios y clases desactualizados",
+    ],
+    after: [
+      "Diseño enérgico pero limpio y legible",
+      "Tarifas claras y visibles",
+      "Alta y prueba gratis online",
+      "Horario de clases siempre al día",
+    ],
+    decisions: [
+      "Mostrar las tarifas de forma transparente desde el inicio.",
+      "Convertir el «apúntate» en una acción online sencilla.",
+      "Ordenar clases y horarios en un calendario claro.",
+      "Mantener la energía de la marca sin sacrificar legibilidad.",
     ],
   },
 ];

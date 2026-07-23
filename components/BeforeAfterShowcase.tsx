@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import { CaseSlider } from "@/components/CaseSlider";
-import { RealCaseSlider } from "@/components/RealCase";
 import { cn } from "@/lib/utils";
 
 const tabs = [
-  { slug: "real", label: "Caso real" },
   { slug: "restaurante-local", label: "Restaurante" },
   { slug: "clinica", label: "Clínica" },
   { slug: "empresa-reformas", label: "Reformas" },
+  { slug: "gimnasio", label: "Gimnasio" },
 ];
 
 /** Comparador interactivo con pestañas para cambiar de sector. */
@@ -45,12 +44,11 @@ export function BeforeAfterShowcase() {
         })}
       </div>
 
-      {active === "real" ? <RealCaseSlider /> : <CaseSlider slug={active} />}
+      <CaseSlider slug={active} />
 
       <p className="mt-3 text-sm text-muted">
-        {active === "real"
-          ? "Transformación real hecha con nuestro análisis. Arrastra para comparar."
-          : "Arrastra el control, o usa las flechas del teclado, para comparar el antes y el después."}
+        Arrastra el control, o usa las flechas del teclado, para comparar el
+        antes y el después.
       </p>
     </div>
   );

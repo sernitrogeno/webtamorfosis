@@ -14,7 +14,7 @@ const filters: { value: CaseSector | "todos"; label: string }[] = [
   { value: "restauracion", label: "Restauración" },
   { value: "salud", label: "Salud" },
   { value: "servicios", label: "Servicios" },
-  { value: "comercio", label: "Comercio" },
+  { value: "deporte", label: "Gimnasios" },
 ];
 
 export function TransformationsGallery() {

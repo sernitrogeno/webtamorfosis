@@ -164,17 +164,23 @@ perfiles sociales. Todos los provisionales están marcados con `// TODO`.
 
 ---
 
-## Cómo poner fotos reales en las webs de ejemplo
+## Fotos de las webs de ejemplo
 
-Las maquetas "después" usan un fondo de degradado por defecto. Para usar una
-foto real:
+Las maquetas "después" (restaurante, clínica, reformas y gimnasio) usan
+**fotos reales de Unsplash** (uso libre) guardadas en `public/mockups/stock/`.
+Las rutas se configuran en **`data/mockups.ts`**.
 
-1. Coloca la imagen (horizontal, ~1200×675, optimizada) en `public/mockups/`,
-   por ejemplo `public/mockups/restaurant.jpg`.
-2. Indica su ruta en **`data/mockups.ts`** (`restaurant`, `reform`…).
+Para **cambiar una foto**:
 
-La foto se incrusta automáticamente en la maqueta; si dejas la cadena vacía, se
-mantiene el degradado. (El ejemplo de restaurante y el de reformas admiten foto.)
+- Sustituye el archivo en `public/mockups/stock/` (mismo nombre), **o**
+- Pon otra ruta en `data/mockups.ts` (p. ej. una foto propia en `public/mockups/`).
+- Si dejas la cadena vacía, la maqueta vuelve al fondo de degradado (CSS).
+
+> Hay más fotos descargadas listas para usar (`salon.jpg`, `shop.jpg`) por si
+> quieres añadir esos sectores (peluquería, tienda) como nuevas maquetas.
+
+El "caso real" (página `/transformaciones`) usa capturas reales en
+`public/mockups/nara/` (ver `components/RealCase.tsx`).
 
 ## Cómo añadir proyectos reales
 
